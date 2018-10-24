@@ -1,0 +1,24 @@
+﻿** Met en surbrillance
+     Tables à reconstruire
+       Aucun
+     Index ordonnés en clusters à supprimer
+       Aucun
+     Index ordonnés en clusters à créer.
+       Aucun
+     Problèmes de données possibles
+       Aucun
+
+** Actions de l'utilisateur
+     Créer
+       [dbo].[AdminAreas] (Table)
+       [dbo].[Countries] (Table)
+       [dbo].[MainCities] (Table)
+       [dbo].[SecondaryCities] (Table)
+       [dbo].[USERS] (Table)
+       Clé étrangère: contrainte sans nom sur [dbo].[AdminAreas] (Clé étrangère)
+       Clé étrangère: contrainte sans nom sur [dbo].[MainCities] (Clé étrangère)
+       Clé étrangère: contrainte sans nom sur [dbo].[SecondaryCities] (Clé étrangère)
+       Clé étrangère: contrainte sans nom sur [dbo].[USERS] (Clé étrangère)
+       Clé étrangère: contrainte sans nom sur [dbo].[USERS] (Clé étrangère)
+
+** Actions de support

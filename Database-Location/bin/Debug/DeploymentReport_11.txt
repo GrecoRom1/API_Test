@@ -1,0 +1,43 @@
+﻿** Met en surbrillance
+     Tables à reconstruire
+       [dbo].[AdminAreas]
+     Index ordonnés en clusters à supprimer
+       Aucun
+     Index ordonnés en clusters à créer.
+       Aucun
+     Problèmes de données possibles
+       La colonne [dbo].[AdminAreas].[Latitude] est en cours de suppression, des données risquent d'être perdues.
+       La colonne [dbo].[AdminAreas].[Longitude] est en cours de suppression, des données risquent d'être perdues.
+       Le type pour la colonne Id de la table [dbo].[AdminAreas] est actuellement  VARCHAR (50) NOT NULL, mais il est en cours
+         de modification en  INT IDENTITY (1, 1) NOT NULL. Une perte de données est susceptible de se produire.
+       Le type pour la colonne AdminArea de la table [dbo].[MainCities] est actuellement  VARCHAR (50) NULL, mais il est en
+         cours de modification en  INT NOT NULL. Une perte de données est susceptible de se produire.
+       Le type pour la colonne AdminArea de la table [dbo].[SecondaryCities] est actuellement  VARCHAR (50) NULL, mais il est
+         en cours de modification en  INT NOT NULL. Une perte de données est susceptible de se produire.
+
+** Actions de l'utilisateur
+     Supprimer
+       contrainte sans nom sur [dbo].[AdminAreas] (Clé étrangère)
+       contrainte sans nom sur [dbo].[MainCities] (Clé étrangère)
+       contrainte sans nom sur [dbo].[SecondaryCities] (Clé étrangère)
+     Reconstruction de la table
+       [dbo].[AdminAreas] (Table)
+     Modifier
+       [dbo].[MainCities] (Table)
+       [dbo].[SecondaryCities] (Table)
+
+** Actions de support
+     Créer
+       Clé étrangère: contrainte sans nom sur [dbo].[AdminAreas] (Clé étrangère)
+       Clé étrangère: contrainte sans nom sur [dbo].[MainCities] (Clé étrangère)
+       Clé étrangère: contrainte sans nom sur [dbo].[SecondaryCities] (Clé étrangère)
+
+La colonne [dbo].[AdminAreas].[Latitude] est en cours de suppression, des données risquent d'être perdues.
+La colonne [dbo].[AdminAreas].[Longitude] est en cours de suppression, des données risquent d'être perdues.
+La colonne Country de la table [dbo].[AdminAreas] doit être modifiée de NULL à NOT NULL. Si la table contient des données, le script ALTER peut ne pas fonctionner. Pour éviter ce problème, vous devez ajouter des valeurs à cette colonne pour toutes les lignes, marquer la colonne comme autorisant les valeurs NULL ou activer la génération de smart-defaults en tant qu'option de déploiement.
+Le type pour la colonne Id de la table [dbo].[AdminAreas] est actuellement  VARCHAR (50) NOT NULL, mais il est en cours de modification en  INT IDENTITY (1, 1) NOT NULL. Une perte de données est susceptible de se produire.
+La colonne AdminArea de la table [dbo].[MainCities] doit être modifiée de NULL à NOT NULL. Si la table contient des données, le script ALTER peut ne pas fonctionner. Pour éviter ce problème, vous devez ajouter des valeurs à cette colonne pour toutes les lignes, marquer la colonne comme autorisant les valeurs NULL ou activer la génération de smart-defaults en tant qu'option de déploiement.
+Le type pour la colonne AdminArea de la table [dbo].[MainCities] est actuellement  VARCHAR (50) NULL, mais il est en cours de modification en  INT NOT NULL. Une perte de données est susceptible de se produire.
+La colonne AdminArea de la table [dbo].[SecondaryCities] doit être modifiée de NULL à NOT NULL. Si la table contient des données, le script ALTER peut ne pas fonctionner. Pour éviter ce problème, vous devez ajouter des valeurs à cette colonne pour toutes les lignes, marquer la colonne comme autorisant les valeurs NULL ou activer la génération de smart-defaults en tant qu'option de déploiement.
+Le type pour la colonne AdminArea de la table [dbo].[SecondaryCities] est actuellement  VARCHAR (50) NULL, mais il est en cours de modification en  INT NOT NULL. Une perte de données est susceptible de se produire.
+

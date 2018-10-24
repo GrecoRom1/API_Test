@@ -1,0 +1,16 @@
+C:\Users\reper\OneDrive\Documents\Traveler\WebApp\MDL\bin\Debug\netstandard2.0\App.config
+C:\Users\reper\OneDrive\Documents\Traveler\WebApp\MDL\bin\Debug\netstandard2.0\MDL.deps.json
+C:\Users\reper\OneDrive\Documents\Traveler\WebApp\MDL\bin\Debug\netstandard2.0\MDL.dll
+C:\Users\reper\OneDrive\Documents\Traveler\WebApp\MDL\bin\Debug\netstandard2.0\MDL.pdb
+C:\Users\reper\OneDrive\Documents\Traveler\WebApp\MDL\bin\Debug\netstandard2.0\DL.exe
+C:\Users\reper\OneDrive\Documents\Traveler\WebApp\MDL\bin\Debug\netstandard2.0\EntityFramework.dll
+C:\Users\reper\OneDrive\Documents\Traveler\WebApp\MDL\bin\Debug\netstandard2.0\DL.pdb
+C:\Users\reper\OneDrive\Documents\Traveler\WebApp\MDL\bin\Debug\netstandard2.0\EntityFramework.xml
+C:\Users\reper\OneDrive\Documents\Traveler\WebApp\MDL\bin\Debug\netstandard2.0\fr\EntityFramework.resources.dll
+C:\Users\reper\OneDrive\Documents\Traveler\WebApp\MDL\obj\Debug\netstandard2.0\MDL.csprojAssemblyReference.cache
+C:\Users\reper\OneDrive\Documents\Traveler\WebApp\MDL\obj\Debug\netstandard2.0\MDL.csproj.CoreCompileInputs.cache
+C:\Users\reper\OneDrive\Documents\Traveler\WebApp\MDL\obj\Debug\netstandard2.0\MDL.AssemblyInfoInputs.cache
+C:\Users\reper\OneDrive\Documents\Traveler\WebApp\MDL\obj\Debug\netstandard2.0\MDL.AssemblyInfo.cs
+C:\Users\reper\OneDrive\Documents\Traveler\WebApp\MDL\obj\Debug\netstandard2.0\MDL.csproj.CopyComplete
+C:\Users\reper\OneDrive\Documents\Traveler\WebApp\MDL\obj\Debug\netstandard2.0\MDL.dll
+C:\Users\reper\OneDrive\Documents\Traveler\WebApp\MDL\obj\Debug\netstandard2.0\MDL.pdb

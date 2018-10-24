@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <StartupScript>(Vide)</StartupScript>
+    <StartAction>StartNone</StartAction>
+    <TargetConnectionString>Data Source=traveler20180321090543dbserver.database.windows.net;Initial Catalog=Db-Location;Persist Security Info=True;User ID=rperrusset;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True</TargetConnectionString>
+    <TargetDatabase>Db-Location</TargetDatabase>
+    <CreateNewDatabase>True</CreateNewDatabase>
+  </PropertyGroup>
+</Project>

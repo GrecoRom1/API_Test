@@ -1,0 +1,5 @@
+<Playlist Version="1.0">
+<Add Test="TestBDD_API.Test_BDD_Init.CanConnectToBDD" />
+<Add Test="TestBDD_API.Test_BDD_Init.EraseBDDIsASuccess" />
+<Add Test="TestBDD_API.Test_BDD_Init.GetAndAddAllCountriesInBDD" />
+</Playlist>
