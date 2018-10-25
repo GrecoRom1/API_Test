@@ -209,7 +209,7 @@ namespace SAL.Teleport
         }
         #endregion
 
-        //public async Task<Tuple<City,City>> GetLocationFromCoordinates(double latitude, double longitude)
+        //public async Task<Tuple<City, City>> GetLocationFromCoordinates(double latitude, double longitude)
         //{
 
         //}

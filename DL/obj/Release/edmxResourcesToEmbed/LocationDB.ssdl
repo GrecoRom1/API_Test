@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AdminAreas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Country" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="GeonameId" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="GeonameId" />
+    </Key>
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="GeonameId" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MainCities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Latitude" Type="float" />
+    <Property Name="Longitude" Type="float" />
+    <Property Name="Population" Type="int" />
+    <Property Name="AdminArea" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__AdminArea__Count__7B5B524B">
+    <End Role="Countries" Type="Self.Countries" Multiplicity="1" />
+    <End Role="AdminAreas" Type="Self.AdminAreas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="GeonameId" />
+      </Principal>
+      <Dependent Role="AdminAreas">
+        <PropertyRef Name="Country" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MainCitie__Admin__7C4F7684">
+    <End Role="AdminAreas" Type="Self.AdminAreas" Multiplicity="1" />
+    <End Role="MainCities" Type="Self.MainCities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdminAreas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MainCities">
+        <PropertyRef Name="AdminArea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="AdminAreas" EntityType="Self.AdminAreas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MainCities" EntityType="Self.MainCities" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__AdminArea__Count__7B5B524B" Association="Self.FK__AdminArea__Count__7B5B524B">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="AdminAreas" EntitySet="AdminAreas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MainCitie__Admin__7C4F7684" Association="Self.FK__MainCitie__Admin__7C4F7684">
+      <End Role="AdminAreas" EntitySet="AdminAreas" />
+      <End Role="MainCities" EntitySet="MainCities" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

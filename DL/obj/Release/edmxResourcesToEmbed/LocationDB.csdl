@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AdminAreas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GeonameId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Countries" Relationship="Self.FK__AdminArea__Count__7B5B524B" FromRole="AdminAreas" ToRole="Countries" />
+    <NavigationProperty Name="MainCities" Relationship="Self.FK__MainCitie__Admin__7C4F7684" FromRole="AdminAreas" ToRole="MainCities" />
+  </EntityType>
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="GeonameId" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GeonameId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="AdminAreas" Relationship="Self.FK__AdminArea__Count__7B5B524B" FromRole="Countries" ToRole="AdminAreas" />
+  </EntityType>
+  <EntityType Name="MainCities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Latitude" Type="Double" />
+    <Property Name="Longitude" Type="Double" />
+    <Property Name="Population" Type="Int32" />
+    <Property Name="AdminArea" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AdminAreas" Relationship="Self.FK__MainCitie__Admin__7C4F7684" FromRole="MainCities" ToRole="AdminAreas" />
+  </EntityType>
+  <Association Name="FK__AdminArea__Count__7B5B524B">
+    <End Role="Countries" Type="Self.Countries" Multiplicity="1" />
+    <End Role="AdminAreas" Type="Self.AdminAreas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Countries">
+        <PropertyRef Name="GeonameId" />
+      </Principal>
+      <Dependent Role="AdminAreas">
+        <PropertyRef Name="Country" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MainCitie__Admin__7C4F7684">
+    <End Role="AdminAreas" Type="Self.AdminAreas" Multiplicity="1" />
+    <End Role="MainCities" Type="Self.MainCities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdminAreas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MainCities">
+        <PropertyRef Name="AdminArea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AdminAreas" EntityType="Self.AdminAreas" />
+    <EntitySet Name="Countries" EntityType="Self.Countries" />
+    <EntitySet Name="MainCities" EntityType="Self.MainCities" />
+    <AssociationSet Name="FK__AdminArea__Count__7B5B524B" Association="Self.FK__AdminArea__Count__7B5B524B">
+      <End Role="Countries" EntitySet="Countries" />
+      <End Role="AdminAreas" EntitySet="AdminAreas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MainCitie__Admin__7C4F7684" Association="Self.FK__MainCitie__Admin__7C4F7684">
+      <End Role="AdminAreas" EntitySet="AdminAreas" />
+      <End Role="MainCities" EntitySet="MainCities" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
