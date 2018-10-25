@@ -15,11 +15,17 @@ namespace WebApp.Controllers
         }
 
         // GET api/location/search
-        [HttpGet("{search:regex(^search=[[A-z]]{{1,20}}$)}")]
-        public string Get(string search)
-        {
-            var match = Regex.Match(search, @"^search=(?<search>[A-z]{1,20})$");
-            return match.Groups["search"].Value;
+        //[HttpGet("{search:regex(^search=[[A-z]]{{1,20}}$)}")]
+        //public string Get(string search)
+        //{
+        //    var match = Regex.Match(search, @"^search=(?<search>[A-z]{1,20})$");
+        //    return match.Groups["search"].Value;
+        //}
+
+        [HttpGet]
+        public string Getsearch(string search)
+        {    
+            return search;
         }
 
         // POST api/values

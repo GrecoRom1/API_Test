@@ -142,7 +142,7 @@ namespace InitData
                 catch (Exception e)
                 {
                     Debug.Write("AddAllCountriesInBDD() :: ERROR Adding country "
-                        + c.Name + " :: Exception = " 
+                        + c.Name + " :: Exception = "
                         + e.ToString());
                 }
             }
@@ -165,9 +165,9 @@ namespace InitData
                 }
                 catch (Exception e)
                 {
-                    Debug.Write("AddAllAdminAreasInBDD() :: ERROR Adding AdminArea" 
-                        + a.Name 
-                        + "to BDD :: Exception = " 
+                    Debug.Write("AddAllAdminAreasInBDD() :: ERROR Adding AdminArea"
+                        + a.Name
+                        + "to BDD :: Exception = "
                         + e.ToString());
                 }
             }
@@ -187,7 +187,7 @@ namespace InitData
                     c.AdminAreaId = AdminAreaDB.GetAdminAreaFromName(c.AdminAreaName).Id;
 
                     if (!(MainCityDB.AddMainCity(c)))
-                    {                      
+                    {
                         isSuccess = false;
                     }
                 }
@@ -195,7 +195,7 @@ namespace InitData
                 {
                     Debug.Write("AddAllMainCitiesInBDD() :: ERROR Adding MainCity :"
                         + c.Name
-                        +" to DB :: Exception = " 
+                        + " to DB :: Exception = "
                         + e.ToString());
                     break;
                 }
@@ -204,6 +204,25 @@ namespace InitData
         }
         #endregion
         #endregion
+
+        [TestMethod]
+        public void JustDoIT()
+        {
+            GetAllCountriesFromTeleportAPI();
+            try
+            {
+                foreach (Country c in ListCountries)
+                {
+                    CountryDB.UpdateCountry(c);
+                }
+                Assert.AreEqual(1, 1);
+            }
+            catch
+            {
+                Assert.AreEqual(0, 1);
+            }
+
+        }
 
         //To order the tests
         #region API and Database

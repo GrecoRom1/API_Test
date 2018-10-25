@@ -160,12 +160,7 @@ namespace SAL.Teleport
         /// <returns>Object MDL.City</returns>
         public async Task<City> GetCity(string cityName)
         {
-            if (cityName.Equals("Minneapolis-Saint Paul"))
-
-            {
-                //todo delete
-            }
-
+            
             string id = await GetCityId(cityName);
 
             if (id == null)
@@ -185,7 +180,7 @@ namespace SAL.Teleport
                 var obj = JObject.Parse(dataObjects)["_links"];
                 try
                 {
-                    string idCountry = Parse(TypeOfData.Country, obj["city:country"]["href"].ToString());
+                    string idCountry = Parse(TypeOfData.Country, obj["city:country"]["href"].ToString());                    
                     string nameAdminArea = obj["city:admin1_division"]["name"].ToString();
                     int population = Convert.ToInt32(JObject.Parse(dataObjects)["population"].ToString());
 

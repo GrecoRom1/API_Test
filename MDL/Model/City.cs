@@ -14,6 +14,9 @@ namespace MDL.Model
         public string CountryId { get; set; }
              
         public string AdminAreaName { get; set; }
+
+        public Country Country { get; set; }
+        public AdminArea AdminArea { get; set; }
         
         public City(string id, string name, double latitude, double longitude, int population)
         {
@@ -34,6 +37,7 @@ namespace MDL.Model
                 Latitude = c.Latitude,
                 Longitude = c.Longitude,
                 AdminArea = c.AdminAreaId,
+                AdminAreas =(AdminAreas)c.AdminArea,
             };
             return mainCities;
         }
@@ -42,6 +46,7 @@ namespace MDL.Model
             City city = new City(c.Id, c.Name, c.Latitude ?? 0, c.Longitude ?? 0, c.Population ?? 0)
             {
                 AdminAreaId = c.AdminArea,
+                AdminArea = (AdminArea)c.AdminAreas,
             };
             return city;
         }

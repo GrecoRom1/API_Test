@@ -94,7 +94,7 @@ namespace DAL
                 try
                 {
                     var ctr = context.Countries.Find(country.GeonameId);
-                    ctr = (Countries)country;
+                    ctr.Name = country.Name;
                     context.SaveChanges();
                     return true;
                 }

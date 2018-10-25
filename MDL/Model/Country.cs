@@ -22,13 +22,13 @@ namespace MDL.Model
             Countries countries = new Countries
             {
                 GeonameId = c.GeonameId,
-                Name = c.GeonameId
+                Name = c.Name
             };
             return countries;
         }
         public static explicit operator Country(Countries c)
         {
-            Country country = new Country(c.GeonameId, c.Name);
+            Country country = new Country(c.Name, c.GeonameId);
             return country;
         }
 

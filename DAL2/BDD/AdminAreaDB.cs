@@ -56,6 +56,40 @@ namespace DAL
             }
         }
 
+        public static AdminArea GetAdminAreaById(int id)
+        {
+            using (var context = new LocationDBEntities())
+            {
+                try
+                {
+                    var admin = context.AdminAreas.Find(id);
+                    return (AdminArea)admin;
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine("Method AdminAreaDB.GetAdminAreaById() Exception :: " + e.ToString());
+                    return null;
+                }
+            }
+        }
+
+        public static AdminArea FindAdminAreaByName(string name)
+        {
+            using (var context = new LocationDBEntities())
+            {
+                try
+                {
+                    var ada = context.AdminAreas.Where(a => a.Name == name).FirstOrDefault();
+                    return (AdminArea)ada;
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine("Method AdminAreaDB.FindAdminAreaByName() Exception :: " + e.ToString());
+                    return null;
+                }
+            }
+        }
+
         /// <summary>
         /// Delete the specified AdminArea
         /// </summary>

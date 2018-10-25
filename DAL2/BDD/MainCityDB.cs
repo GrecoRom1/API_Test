@@ -2,6 +2,7 @@
 using MDL.Model;
 using System;
 using System.Diagnostics;
+using System.Linq;
 
 namespace DAL
 {
@@ -80,6 +81,25 @@ namespace DAL
                     Debug.WriteLine("Method MainCityDB.UpdateMainCity() Exception :: " 
                         + e.ToString());
                     return false;
+                }
+
+            }
+        }
+
+        public static City FindMainCityByName(string name)
+        {
+            using (var context = new LocationDBEntities())
+            {
+                try
+                {
+                    var ctr = context.MainCities.Where(c=>c.Name == name).FirstOrDefault();                  
+                    return ((City)ctr);
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine("Method MainCityDB.FindMainCityByName() Exception :: "
+                        + e.ToString());
+                    return null;
                 }
 
             }

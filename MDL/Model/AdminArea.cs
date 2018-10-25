@@ -32,6 +32,7 @@ namespace MDL.Model
                 GeonameId = a.GeonameId,
                 Name = a.Name,
                 Country = a.CountryId,
+                Countries = (Countries)a.Country,
             };
             return adminAreas;
         }
@@ -40,6 +41,7 @@ namespace MDL.Model
             AdminArea adminArea = new AdminArea(a.Country, a.GeonameId, a.Name)
             {
                 Id = a.Id,
+                Country = (Country)a.Countries,
             };
             return adminArea;
         }
