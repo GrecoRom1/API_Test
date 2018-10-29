@@ -112,17 +112,9 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DAL2\DAL.csproj">
-      <Project>{98f5d0ba-e055-4604-8818-a4667e5b32d1}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MDL\MDL.csproj">
-      <Project>{f82c1168-01c6-4f7e-a7eb-75ac70031dd3}</Project>
-      <Name>MDL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SAL\SAL.csproj">
-      <Project>{0c666b44-4fdd-48a5-8abb-824d8f42a562}</Project>
-      <Name>SAL</Name>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{f085ee8a-d2b3-4121-92c5-b3b6a5c52de8}</Project>
+      <Name>BLL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

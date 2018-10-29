@@ -1,5 +1,4 @@
 ﻿using DL;
-using MDL.Model;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -13,13 +12,13 @@ namespace DAL
         /// Get the list of all Country in DB
         /// </summary>
         /// <returns>List of MDL.Country</returns>
-        public static List<Country> GetListCountry()
+        public static List<Countries> GetListCountry()
         {
             using (var context = new LocationDBEntities())
             {
                 try
                 {
-                    var ctr = context.Countries.Select(c => (Country)c).ToList();
+                    var ctr = context.Countries.Select(c => c).ToList();
                     return ctr;
                 }
                 catch (Exception e)
@@ -36,11 +35,11 @@ namespace DAL
         /// </summary>
         /// <param name="country"></param>
         /// <returns>true if OK or false if ERROR</returns>
-        public static bool AddCountry(Country country)
+        public static bool AddCountry(Countries country)
         {
             using (var context = new LocationDBEntities())
             {
-                var ctr = (Countries)country;
+                var ctr = country;
 
                 try
                 {
@@ -57,12 +56,31 @@ namespace DAL
             }
         }
 
+        public static Countries GetCountryFromId(string countryId)
+        {
+            using (var context = new LocationDBEntities())
+            {
+                try
+                {
+                    var ctr = context.Countries.Find(countryId);
+                    context.Countries.Remove(ctr);
+                    return ctr;
+                }
+                catch (Exception e)
+                {
+                    Debug.WriteLine("Method CountryDB.GetCountryFromId() Exception :: "
+                        + e.ToString());
+                    return null;
+                }
+            }
+        }
+
         /// <summary>
         /// Delete the specified Country in DB
         /// </summary>
         /// <param name="country"></param>
         /// <returns>true if OK or false if ERROR</returns>
-        public static bool DeleteCountry(Country country)
+        public static bool DeleteCountry(Countries country)
         {
             using (var context = new LocationDBEntities())
             {
@@ -87,7 +105,7 @@ namespace DAL
         /// </summary>
         /// <param name="country"></param>
         /// <returns>true if OK or false if ERROR</returns>
-        public static bool UpdateCountry(Country country)
+        public static bool UpdateCountry(Countries country)
         {
             using (var context = new LocationDBEntities())
             {

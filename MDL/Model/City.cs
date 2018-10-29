@@ -11,11 +11,10 @@ namespace MDL.Model
         public int Population { get; private set; }
 
         public int AdminAreaId { get; set; }
-        public string CountryId { get; set; }
-             
         public string AdminAreaName { get; set; }
+        public string CountryId { get; set; }
+        public string CountryName { get; set; }
 
-        public Country Country { get; set; }
         public AdminArea AdminArea { get; set; }
         
         public City(string id, string name, double latitude, double longitude, int population)

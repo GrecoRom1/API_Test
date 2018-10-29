@@ -34,28 +34,6 @@
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
-      },
-      "DL/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/DL.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DL.dll": {}
-        }
-      },
-      "MDL/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "DL": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/MDL.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/MDL.dll": {}
-        }
       }
     }
   },
@@ -227,21 +205,10 @@
         "newtonsoft.json.11.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec"
       ]
-    },
-    "DL/1.0.0": {
-      "type": "project",
-      "path": "../DL/DL.csproj",
-      "msbuildProject": "../DL/DL.csproj"
-    },
-    "MDL/1.0.0": {
-      "type": "project",
-      "path": "../MDL/MDL.csproj",
-      "msbuildProject": "../MDL/MDL.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "MDL >= 1.0.0",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 11.0.2"
     ]
@@ -275,11 +242,7 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {
-            "C:\\Users\\reper\\OneDrive\\Documents\\API_Test\\MDL\\MDL.csproj": {
-              "projectPath": "C:\\Users\\reper\\OneDrive\\Documents\\API_Test\\MDL\\MDL.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

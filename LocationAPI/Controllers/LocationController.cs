@@ -1,6 +1,4 @@
-﻿using DAL;
-using MDL.Model;
-using SAL.Teleport;
+﻿using BLL;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -20,8 +18,8 @@ namespace LocationAPI.Controllers
 
         [HttpGet]
         public async Task<object> GetSearchCity(string search)
-        {
-            var rslt = MainCityDB.FindMainCityByName(search);
+        {          
+            var rslt = await LocationBLL.GetCityByName(search);
 
             if (rslt != null)
             {
@@ -29,27 +27,26 @@ namespace LocationAPI.Controllers
             }
             else
             {
-                rslt = await TeleportAPI.Instance.GetCity(search);
-
-                if (rslt != null)
-                {
-                    rslt.AdminArea = AdminAreaDB.FindAdminAreaByName(rslt.AdminAreaName);
-                    rslt.AdminAreaId = rslt.AdminArea.Id;
-                    MainCityDB.AddMainCity(rslt);
-                    return Request.CreateResponse(HttpStatusCode.OK, rslt);
-                }
-                else
-                {
-                    return Request.CreateResponse(HttpStatusCode.NotFound, "Could not find the city :" + search);
-                }
+                return Request.CreateResponse(HttpStatusCode.NotFound, 
+                    "Could not find the city :" + search);
             }
         }
 
 
         [HttpGet]
-        public City GetLocationFromCoordiantes(double latitude, double longitude)
+        public async Task<object> GetLocationFromCoordiantes(double latitude, double longitude)
         {
-            return new City("Post", "Lyon", latitude, longitude, 159874);
+            var rslt = await LocationBLL.GetNearestCityFromCoordinates(latitude, longitude);
+
+            if (rslt != null)
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, rslt);
+            }
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.NotFound,
+                    "Could not find the location");
+            }
         }
     }
 }

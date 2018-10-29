@@ -1,5 +1,4 @@
 ﻿using DL;
-using MDL.Model;
 using System;
 using System.Diagnostics;
 using System.Linq;
@@ -13,11 +12,11 @@ namespace DAL
         /// </summary>
         /// <param name="city"></param>
         /// <returns>true if OK or false if ERROR</returns>
-        public static bool AddMainCity(City city)
+        public static bool AddMainCity(MainCities city)
         {
             using (var context = new LocationDBEntities())
             {
-                var ctr = (MainCities)city;
+                var ctr = city;
 
                 try
                 {
@@ -40,7 +39,7 @@ namespace DAL
         /// </summary>
         /// <param name="city"></param>
         /// <returns>true if OK or false if ERROR</returns>
-        public static bool DeleteMainCity(City city)
+        public static bool DeleteMainCity(MainCities city)
         {
             using (var context = new LocationDBEntities())
             {
@@ -65,14 +64,14 @@ namespace DAL
         /// </summary>
         /// <param name="city"></param>
         /// <returns>true if OK or false if ERROR</returns>
-        public static bool UpdateMainCity(City city)
+        public static bool UpdateMainCity(MainCities city)
         {
             using (var context = new LocationDBEntities())
             {
                 try
                 {
                     var ctr = context.MainCities.Find(city.Id);
-                    ctr = (MainCities)city;
+                    ctr = city;
                     context.SaveChanges();
                     return true;
                 }
@@ -86,14 +85,14 @@ namespace DAL
             }
         }
 
-        public static City FindMainCityByName(string name)
+        public static MainCities FindMainCityByName(string name)
         {
             using (var context = new LocationDBEntities())
             {
                 try
                 {
                     var ctr = context.MainCities.Where(c=>c.Name == name).FirstOrDefault();                  
-                    return ((City)ctr);
+                    return ctr;
                 }
                 catch (Exception e)
                 {

@@ -83,10 +83,6 @@
       <Project>{0f8d9c64-1e93-46c6-b4c1-b31ee20f09f8}</Project>
       <Name>DL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MDL\MDL.csproj">
-      <Project>{f82c1168-01c6-4f7e-a7eb-75ac70031dd3}</Project>
-      <Name>MDL</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\esm\popper-utils.js" />
