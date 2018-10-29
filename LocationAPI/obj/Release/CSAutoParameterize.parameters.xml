@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="Entities-Web.config Connection String" description="Entities Chaîne de connexion utilisée dans web.config par l’application pour accéder à la base de données." defaultValue="metadata=res://*/LocationDB.csdl|res://*/LocationDB.ssdl|res://*/LocationDB.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=traveler20180321090543dbserver.database.windows.net;initial catalog=Db-Location;persist security info=True;user id=rperrusset;password=LOUlosc38;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+  <parameter name="Entities-Web.config Connection String" description="Entities Chaîne de connexion utilisée dans web.config par l’application pour accéder à la base de données." defaultValue="metadata=res://*/LocationDB.csdl|res://*/LocationDB.ssdl|res://*/LocationDB.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=traveler20180321090543dbserver.database.windows.net;initial catalog=Db-Location;persist security info=True;user id=rperrusset;password=testAPI69;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="C:\\Users\\reper\\OneDrive\\Documents\\API_Test\\LocationAPI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Entities']/@connectionString" />
   </parameter>
 </parameters>
