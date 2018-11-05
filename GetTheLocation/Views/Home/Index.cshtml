@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "View";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="Index.css" media="Screen" type="text/css" />
+    <title>Home</title>
+</head>
+<body>
+    <div class="center">
+        <h5>Get The Location !</h5>
+        <p>You can find any location in the world !</p>
+        <br>
+
+        <h4>Search a city by keyword</h4>
+        @using (Html.BeginForm("Search", "DisplayCity", FormMethod.Post))
+        {
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control" placeholder="City...">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-success" value="search">Go!</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        }
+        <br>
+
+        <br>
+        <h5> - OR -</h5>
+        <br>
+
+        <h4>Find your location from GPS coordinates</h4>
+        <br>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Latitude">
+                    <input type="text" class="form-control" placeholder="Longitude">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-success">Go!</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <br>
+        <h5> - OR -</h5>
+        <br>
+
+        <h4>Look for a random city!</h4>
+        <div class="col-lg-6">
+            <button type="button" class="btn btn-dark">???</button>
+        </div>
+    </div>
+</body>
+</html>

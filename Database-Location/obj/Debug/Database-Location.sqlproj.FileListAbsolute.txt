@@ -1,6 +1,9 @@
 C:\Users\reper\OneDrive\Documents\API_Test\Database-Location\bin\Debug\Database-Location.dacpac
 C:\Users\reper\OneDrive\Documents\API_Test\Database-Location\bin\Debug\Database_Location.dll
 C:\Users\reper\OneDrive\Documents\API_Test\Database-Location\bin\Debug\Database_Location.pdb
+C:\Users\reper\OneDrive\Documents\API_Test\Database-Location\obj\Debug\Model.xml
+C:\Users\reper\OneDrive\Documents\API_Test\Database-Location\obj\Debug\refactor.xml
+C:\Users\reper\OneDrive\Documents\API_Test\Database-Location\obj\Debug\postdeploy.sql
+C:\Users\reper\OneDrive\Documents\API_Test\Database-Location\obj\Debug\predeploy.sql
 C:\Users\reper\OneDrive\Documents\API_Test\Database-Location\obj\Debug\Database_Location.dll
 C:\Users\reper\OneDrive\Documents\API_Test\Database-Location\obj\Debug\Database_Location.pdb
-C:\Users\reper\OneDrive\Documents\API_Test\Database-Location\obj\Debug\Database-Location.sqlprojAssemblyReference.cache

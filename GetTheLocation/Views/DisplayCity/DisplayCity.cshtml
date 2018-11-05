@@ -1,0 +1,14 @@
+﻿@model BLL.City
+
+    @{
+        ViewBag.Title = "DisplayCity";
+    }
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Display City</title>
+    </head>
+    <body>
+        <p>Cette ville est dans le pays : @Model.AdminArea.Country.Name.ToString()</p>
+    </body>
+</html>
