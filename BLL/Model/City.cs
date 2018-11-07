@@ -1,4 +1,5 @@
-﻿using DL;
+﻿using DAL;
+using DL;
 using SAL;
 using System;
 using System.Diagnostics;
@@ -49,7 +50,7 @@ namespace BLL
             {
                 City city = new City(c.Id, c.Name, c.Latitude ?? 0, c.Longitude ?? 0, c.Population ?? 0)
                 {
-                   AdminArea = (AdminArea)c.AdminAreas,
+                   AdminArea = (AdminArea)AdminAreaDB.GetAdminAreaById(c.AdminArea),
                 };
                 return city;
             }

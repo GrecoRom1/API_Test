@@ -16,10 +16,10 @@ namespace GetTheLocation.Controllers
         //    return View();
         //}
 
-        [HttpPost]
+        [HttpGet]
         public async Task<ActionResult> Search(string search)
         {
-            City city = await LocationBLL.GetCityByName(search);
+            var city = await LocationBLL.GetCityByName(search);
 
             if (city != null)
             {
@@ -27,7 +27,22 @@ namespace GetTheLocation.Controllers
             }
             else
             {
-                return View("CityNotFounded");
+                return View("ErrorCity");
+            }
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> GetCityFromCoordinates(double latitude, double longitude)
+        {
+            var city = await LocationBLL.GetNearestCityFromCoordinates(latitude, longitude);
+
+            if (city != null)
+            {
+                return View("DisplayCity", city);
+            }
+            else
+            {
+                return View("ErrorCity");
             }
         }
     }

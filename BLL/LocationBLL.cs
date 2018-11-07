@@ -9,23 +9,24 @@ namespace BLL
     {
         public async static Task<City> GetCityByName(string name)
         {
-            var city = (City)MainCityDB.FindMainCityByName(name);
+            var cityDAL = MainCityDB.FindMainCityByName(name);
 
             // City found in Database
-            if (city != null)
+            if (cityDAL != null)
             {
-                return city;
+                return (City)cityDAL;
             }
 
             //City is not in database
             else
             {
                 //Find city with Teleport API
-                city = (City)await TeleportAPI.Instance.GetCityFromName(name);
+                var citySAL = await TeleportAPI.Instance.GetCityFromName(name);
 
                 //City found, city is added to DB
-                if (city != null)
+                if (citySAL != null)
                 {
+                    var city = (City)citySAL;
                     city.AdminArea = (AdminArea)AdminAreaDB
                         .FindAdminAreaByNameAndCountryId((AdminAreas)city.AdminArea,
                         (Countries)city.AdminArea.Country);
@@ -44,18 +45,26 @@ namespace BLL
 
         public async static Task<City> GetNearestCityFromCoordinates(double latitude, double longitude)
         {
-            City nearestCity = (City) await TeleportAPI.Instance.GetNearestCityFromCoordinates(latitude, longitude);
+            var nearestCity = await TeleportAPI.Instance.GetNearestCityFromCoordinates(latitude, longitude);
 
-            if ((City)MainCityDB.FindMainCityByName(nearestCity.Name) == null)
+            if (nearestCity == null)
             {
-                nearestCity.AdminArea = (AdminArea)AdminAreaDB
-                        .FindAdminAreaByNameAndCountryId((AdminAreas)nearestCity.AdminArea,
-                        (Countries)nearestCity.AdminArea.Country);
-
-                MainCityDB.AddMainCity((MainCities)nearestCity);
+                return null;
             }
+            else
+            {
+                var city = (City)nearestCity;
+                if ((City)MainCityDB.FindMainCityByName(nearestCity.Name) == null)
+                {
+                    city.AdminArea = (AdminArea)AdminAreaDB
+                            .FindAdminAreaByNameAndCountryId((AdminAreas)city.AdminArea,
+                            (Countries)city.AdminArea.Country);
 
-            return nearestCity;
+                    MainCityDB.AddMainCity((MainCities)city);
+                }
+
+                return city;
+            }
 
         }
     }

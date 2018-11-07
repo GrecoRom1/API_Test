@@ -15,4 +15,3 @@ C:\Users\reper\OneDrive\Documents\API_Test\DL\obj\Debug\DL.csproj.CoreCompileInp
 C:\Users\reper\OneDrive\Documents\API_Test\DL\obj\Debug\DL.csproj.CopyComplete
 C:\Users\reper\OneDrive\Documents\API_Test\DL\obj\Debug\DL.exe
 C:\Users\reper\OneDrive\Documents\API_Test\DL\obj\Debug\DL.pdb
-C:\Users\reper\OneDrive\Documents\API_Test\DL\obj\Debug\DL.csprojAssemblyReference.cache

@@ -239,12 +239,12 @@ namespace SAL.Teleport
             {
                 // Parse the response body. Blocking!
                 var dataObjects = await response.Content.ReadAsStringAsync();
-
-                var obj = JObject.Parse(dataObjects)["_embedded"];
-                JArray array = (JArray)obj["location:nearest-cities"];
-
                 try
                 {
+
+                    var obj = JObject.Parse(dataObjects)["_embedded"];
+                    JArray array = (JArray)obj["location:nearest-cities"];
+
                     string cityId = Parse(TypeOfData.City, array[0]["_links"]["location:nearest-city"]["href"].ToString());
                     string cityName = array[0]["_links"]["location:nearest-city"]["name"].ToString();
 

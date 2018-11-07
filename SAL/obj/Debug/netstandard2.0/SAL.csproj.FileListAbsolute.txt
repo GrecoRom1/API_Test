@@ -1,6 +1,7 @@
 C:\Users\reper\OneDrive\Documents\API_Test\SAL\bin\Debug\netstandard2.0\SAL.deps.json
 C:\Users\reper\OneDrive\Documents\API_Test\SAL\bin\Debug\netstandard2.0\SAL.dll
 C:\Users\reper\OneDrive\Documents\API_Test\SAL\bin\Debug\netstandard2.0\SAL.pdb
+C:\Users\reper\OneDrive\Documents\API_Test\SAL\obj\Debug\netstandard2.0\SAL.csprojAssemblyReference.cache
 C:\Users\reper\OneDrive\Documents\API_Test\SAL\obj\Debug\netstandard2.0\SAL.csproj.CoreCompileInputs.cache
 C:\Users\reper\OneDrive\Documents\API_Test\SAL\obj\Debug\netstandard2.0\SAL.AssemblyInfoInputs.cache
 C:\Users\reper\OneDrive\Documents\API_Test\SAL\obj\Debug\netstandard2.0\SAL.AssemblyInfo.cs
